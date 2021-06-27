@@ -1,0 +1,36 @@
+version: '3.6'
+services:
+  web:
+    image: hub.ferumflex.com/ferumflex/microgreen:prod
+    deploy:
+      mode: replicated
+      replicas: 2
+      resources:
+        limits:
+          memory: 256MB
+      labels:
+        - "traefik.enable=true"
+        - "traefik.backend=microgreen"
+        - "traefik.frontend.rule=Host:microgreen.ferumflex.com"
+        - "traefik.docker.network=traefik_frontend"
+        - "traefik.port=80"
+      placement:
+        constraints:
+          - node.labels.type == main
+    healthcheck:
+      test: "curl -H 'Host: microgreen.ferumflex.com' -f http://localhost || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    networks:
+      - backend
+      - traefik_frontend
+    volumes:
+      - /data/microgreen/media:/opt/django/persistent/media
+      - /data/microgreen/db:/opt/django/app/db
+
+networks:
+  backend:
+  traefik_frontend:
+    external: true

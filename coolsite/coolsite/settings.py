@@ -26,7 +26,7 @@ DEBUG = True
 # включен режим отладки!
 
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'coolsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'db' / 'db.sqlite3',
     }
 }
 
@@ -113,12 +113,12 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # путь к общей папке статик
+STATIC_ROOT = BASE_DIR.parent / "volatile" / "static"
 STATICFILES_DIRS = []  # список нестандартных путей
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # все медиа собрано в каталог media
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR.parent / "volatile" / "media"
+MEDIA_URL = "/media/"
 
 # путь, для тулбара
 INTERNAL_IPS = [
