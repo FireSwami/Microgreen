@@ -118,7 +118,7 @@ STATICFILES_DIRS = []  # список нестандартных путей
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # все медиа собрано в каталог media
-MEDIA_ROOT = BASE_DIR.parent / "volatile" / "media"
+MEDIA_ROOT = BASE_DIR.parent / "persistent" / "media"
 MEDIA_URL = "/media/"
 
 # путь, для тулбара
