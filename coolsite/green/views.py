@@ -1,8 +1,9 @@
 from django.contrib.auth import logout, login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
+from django.core.mail import send_mail
 from django.core.paginator import Paginator
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponseNotFound
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, FormView
@@ -83,7 +84,19 @@ class ContactFormView(DataMixin, FormView):  # форм вью - базовый 
 
     def form_valid(self, form):
         print(form.cleaned_data)
-        return redirect('home')
+        cd = form.cleaned_data
+        send_mail(
+            cd['subject'],  # name?
+            cd['message'],  # content?
+            cd.get('email', 'noreply@example.com'),
+            ['jobforsoul@gmail.com'],
+            fail_silently=False)
+
+        return redirect('thanks')
+
+
+def thanks(request):
+    return render(request, 'green/thanks.html')
 
 
 class ShowPost(DataMixin, DetailView):
