@@ -51,3 +51,10 @@ admin.site.register(Category, CategoryAdmin)
 # редактируем надписи в админ-панеле
 admin.site.site_title = 'Админ-панель сайта микрозелень'
 admin.site.site_header = 'Админ-панель сайта микрозелень'
+
+
+class ProjectUpdateAdmin(admin.ModelAdmin):
+    formfield_overrides = {
+        models.TextField: {'widget': Textarea(
+            attrs={'id': 'project_update_textarea'})}
+    }

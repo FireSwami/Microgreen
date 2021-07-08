@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
     'captcha',
-    'green.apps.GreenConfig'
+    'green.apps.GreenConfig',
+    'ckeditor'
 ]
 
 MIDDLEWARE = [
@@ -134,3 +135,6 @@ CACHES = {
         'LOCATION': os.path.join(BASE_DIR, 'coolsite_cache'),  # указать путь к папке кэша
     }
 }
+
+
+CKEDITOR_BASEPATH = "/my_static/ckeditor/ckeditor/"
