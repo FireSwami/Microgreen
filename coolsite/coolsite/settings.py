@@ -129,11 +129,11 @@ INTERNAL_IPS = [
 #Почтовый сервер
 
 EMAIL_HOST = 'smtp.ukr.net'
-EMAIL_PORT = 465  #465 #2525
+EMAIL_PORT = 2525  #465  #2525
 EMAIL_HOST_USER = 'supermicrogreen@ukr.net' # логин почты
 EMAIL_HOST_PASSWORD = 'cDblNgVhIWvOPOUU' # пасс от почты
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
 
 # кэширование:
 CACHES = {
