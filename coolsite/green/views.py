@@ -86,9 +86,9 @@ class ContactFormView(DataMixin, FormView):  # форм вью - базовый 
         print(form.cleaned_data)
         cd = form.cleaned_data
         send_mail(
-            cd['subject'],  # name?
-            cd['message'],  # content?
-            cd.get('email', 'noreply@example.com'),
+            cd['name'],
+            cd['content'],
+            'supermicrogreen@ukr.net',  # smtp сервер
             ['jobforsoul@gmail.com'],
             fail_silently=False)
 
