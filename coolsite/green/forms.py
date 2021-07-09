@@ -55,4 +55,4 @@ class ContactForm(forms.Form):  # наследуется от общего кл�
     email = forms.EmailField(label='Email')
     mobile = forms.ImageField(widget=forms.TextInput, label='Телефон')
     content = forms.CharField(label='Напишите нам', widget=forms.Textarea(attrs={'cols': 60, 'rows': 10}))
-    captcha = CaptchaField(label='Введите текст с картинки')
+   # captcha = CaptchaField(label='Введите текст с картинки')
