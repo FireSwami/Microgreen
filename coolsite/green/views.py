@@ -84,11 +84,11 @@ class ContactFormView(DataMixin, FormView):  # форм вью - базовый 
 
     def form_valid(self, form):
         print(form.cleaned_data)
-        subject = form.cleaned_data['subject']
+        name = form.cleaned_data['subject']
         email = form.cleaned_data['email']
         mobile = form.cleaned_data['mobile']
         content = form.cleaned_data['content']
-        send_mail(subject,
+        send_mail(name,
                   f' Мой телефон {mobile} и почта {email}. Хочу обратиться с вопросом:\n {content}',
                   'supermicrogreen@ukr.net',
                   ['jobforsoul@gmail.com'],
