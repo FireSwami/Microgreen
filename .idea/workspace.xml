@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1215d053-ae88-4a55-9bb9-eadb792ce3e1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Microgreen.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Microgreen.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coolsite/coolsite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/coolsite/coolsite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coolsite/green/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/coolsite/green/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coolsite/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/coolsite/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coolsite/green/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/coolsite/green/forms.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

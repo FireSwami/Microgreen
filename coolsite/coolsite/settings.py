@@ -125,8 +125,15 @@ MEDIA_URL = "/media/"
 # путь, для тулбара
 INTERNAL_IPS = [
     '127.0.0.1',
-
 ]
+#Почтовый сервер
+
+EMAIL_HOST = 'smtp.ukr.net'
+EMAIL_PORT = 465  #465 #2525
+EMAIL_HOST_USER = 'supermicrogreen@ukr.net' # логин почты
+EMAIL_HOST_PASSWORD = 'cDblNgVhIWvOPOUU' # пасс от почты
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 
 # кэширование:
 CACHES = {

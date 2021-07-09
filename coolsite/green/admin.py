@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.forms import Textarea
 from django.utils.safestring import mark_safe
 
 from .models import *
@@ -51,6 +52,8 @@ admin.site.register(Category, CategoryAdmin)
 # редактируем надписи в админ-панеле
 admin.site.site_title = 'Админ-панель сайта микрозелень'
 admin.site.site_header = 'Админ-панель сайта микрозелень'
+
+
 
 
 class ProjectUpdateAdmin(admin.ModelAdmin):
