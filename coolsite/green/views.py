@@ -84,7 +84,7 @@ class ContactFormView(DataMixin, FormView):  # форм вью - базовый 
 
     def form_valid(self, form):
         print(form.cleaned_data)
-        name = form.cleaned_data['subject']
+        name = form.cleaned_data['name']
         email = form.cleaned_data['email']
         mobile = form.cleaned_data['mobile']
         content = form.cleaned_data['content']
