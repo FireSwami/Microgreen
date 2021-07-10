@@ -7,5 +7,5 @@
 <p><img class="img-article-left" src="{{post.photo.url}}"></p>
 {% endif %}
 
-{{post.content|linebreaks}}
+{{post.content|safe|linebreaks}}
 {% endblock %}

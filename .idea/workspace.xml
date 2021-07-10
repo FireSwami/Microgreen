@@ -2,7 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1215d053-ae88-4a55-9bb9-eadb792ce3e1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/coolsite/green/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/coolsite/green/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/images/icon-hdpi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/images/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/ar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/bg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/cs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/de.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/el.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/et.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/eu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/fi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/fr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/he.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/hu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/it.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/ja.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/ko.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/nb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/nl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/nn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/pl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/pt-br.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/pt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/ru.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/sk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/tr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/uk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/vi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/lang/zh.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins/youtube/plugin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coolsite/coolsite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/coolsite/coolsite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coolsite/coolsite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/coolsite/coolsite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coolsite/green/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/coolsite/green/admin.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +58,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/coolsite/static/ckeditor/ckeditor/plugins" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\microgreen2\coolsite\static\ckeditor\ckeditor\plugins" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -31,5 +75,16 @@
       <updated>1625739944112</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
