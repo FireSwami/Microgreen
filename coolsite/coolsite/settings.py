@@ -212,7 +212,7 @@ CKEDITOR_CONFIGS = {
             'dialog',
             'dialogui',
             'elementspath',
-            'youtube'
+            #'Youtube'               # c добавлением  экстраплагина ютуб - пропадает вся форма редактирования
         ]),
     }
 }
