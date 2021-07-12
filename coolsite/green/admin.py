@@ -1,8 +1,22 @@
+from django import forms
 from django.contrib import admin
 from django.forms import Textarea
 from django.utils.safestring import mark_safe
 
 from .models import *
+
+
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
+
+
+
+class GreenAdminForm(forms.ModelForm):
+    content = forms.CharField(label='Статья', widget=CKEditorUploadingWidget())
+    class Meta:
+        model = Green
+        fields = '__all__'
+
+
 
 
 class CreenAdmin(admin.ModelAdmin):
@@ -14,6 +28,7 @@ class CreenAdmin(admin.ModelAdmin):
     # по каким полям можно искать
     list_editable = ('is_published',)
     # указываем строку, которую можно редактировать
+    form = GreenAdminForm
     list_filter = ('is_published', 'time_create')
     # поля для фильтрации - сортировки
     prepopulated_fields = {"slug": ("title",)}
@@ -56,8 +71,3 @@ admin.site.site_header = 'Админ-панель сайта микрозеле�
 
 
 
-class ProjectUpdateAdmin(admin.ModelAdmin):
-    formfield_overrides = {
-        models.TextField: {'widget': Textarea(
-            attrs={'id': 'project_update_textarea'})}
-    }
