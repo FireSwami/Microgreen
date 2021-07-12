@@ -3,3 +3,4 @@ db.sqlite3
 media
 coolsite_cache
 venv
+.idea
