@@ -435,7 +435,7 @@ ul.lang-list li a:hover {color: #fdc073;}
         font-size: 25px;
     }
     .left-chapters {
-    display none !important
+        display: none !important;
     }
     .wrapper  {
 	width: 320px;
