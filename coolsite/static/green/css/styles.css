@@ -418,7 +418,7 @@ ul.lang-list li a:hover {color: #fdc073;}
 	border-radius: 30px;
 }
 .list-pages .page-num:hover {
-	box-shadow: 3px 3px 1px #d0d0d0; 
+	box-shadow: 3px 3px 1px #d0d0d0;
 }
 .list-pages .page-num-selected {
 	border: none;
@@ -426,7 +426,7 @@ ul.lang-list li a:hover {color: #fdc073;}
 	font-size: 20px;
 }
 .list-pages .page-num-selected:hover {
-	box-shadow: none; 
+	box-shadow: none;
 }
 
 
@@ -438,6 +438,6 @@ ul.lang-list li a:hover {color: #fdc073;}
         display: none !important;
     }
     .wrapper  {
-	width: 320px;
+		width: 320px;
     }
 }
