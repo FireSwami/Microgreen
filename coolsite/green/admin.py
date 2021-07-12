@@ -71,8 +71,3 @@ admin.site.site_header = 'Админ-панель сайта микрозеле�
 
 
 
-class ProjectUpdateAdmin(admin.ModelAdmin):
-    formfield_overrides = {
-        models.TextField: {'widget': Textarea(
-            attrs={'id': 'project_update_textarea'})}
-    }
