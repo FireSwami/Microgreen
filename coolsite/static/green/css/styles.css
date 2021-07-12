@@ -428,3 +428,16 @@ ul.lang-list li a:hover {color: #fdc073;}
 .list-pages .page-num-selected:hover {
 	box-shadow: none; 
 }
+
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 25px;
+    }
+    .left-chapters {
+    display none
+    }
+    .wrapper  {
+	width: 320px;
+    }
+}
