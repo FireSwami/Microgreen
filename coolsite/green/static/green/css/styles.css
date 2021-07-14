@@ -1,3 +1,4 @@
+/*
 html, body {
 	font-family: 'Arial';
 	margin: 0;
@@ -437,6 +438,9 @@ ul.lang-list li a:hover {color: #fdc073;}
         display: none !important;
     }
     .wrapper  {
-		width: 320px;
+		min-width: 320px;
+		width:100%;
     }
 }
+
+*/
