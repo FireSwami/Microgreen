@@ -437,11 +437,10 @@ ul.lang-list li a:hover {color: #fdc073;}
 
 
 .section {
-  height: 100vh;
+
   background-color: #7b1fa2;
   display: flex;
-  justify-content: center;
-  align-items: center;
+
 }
 .menu-btn {
   display: block;
