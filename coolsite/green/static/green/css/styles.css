@@ -435,10 +435,7 @@ ul.lang-list li a:hover {color: #fdc073;}
 
 /*бургер*/
 
-body {
-  font-family: sans-serif;
-  margin: 0;
-}
+
 .section {
   height: 100vh;
   background-color: #7b1fa2;
