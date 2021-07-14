@@ -436,9 +436,12 @@ ul.lang-list li a:hover {color: #fdc073;}
 /*бургер*/
 
 
+.section {
 
+  background-color: none;
+  display: flex;
 
-
+}
 .menu-btn {
   display: block;
   width: 50px;
