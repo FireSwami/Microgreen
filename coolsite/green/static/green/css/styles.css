@@ -449,6 +449,7 @@ ul.lang-list li a:hover {color: #fdc073;}
   background-color: #fff;
   border-radius: 50%;
   position: relative;
+  top: 50%; margin-top: -13px;
 }
 .menu-btn span,
 .menu-btn span::before,
