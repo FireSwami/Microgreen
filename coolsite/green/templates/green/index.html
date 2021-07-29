@@ -17,7 +17,8 @@
 	{{p.content|safe|linebreaks|truncatewords:50}}
 	{% endautoescape %}
 			<div class="clear"></div>
-			<p class="link-read-post"><a href="{{ p.get_absolute_url }}">Больше</a></p>
+			<button class="cart">Купить</button>
+			<p class="link-read-post"><a href="{{ p.get_absolute_url }}">Читать еще..</a></p>
 			</li>
 	{% endfor %}
 </ul>

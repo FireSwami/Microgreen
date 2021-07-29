@@ -437,6 +437,20 @@ ul.lang-list li a:hover {color: #fdc073;}
 	box-shadow: none;
 }
 
+.cart {
+    position: relative;
+    left: 30;
+    padding: 10px;
+	background-color: #36b552;
+	border-radius: 50%;
+	font-size: 22px;
+}
+
+.cart:hover{
+    color: #FFF
+
+}
+
 /* бургер */
 
 .burger-menu__button {
