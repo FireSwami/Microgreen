@@ -456,7 +456,7 @@ ul.lang-list li a:hover {color: #fdc073;}
 }
 
 .cart_main:hover{
-    color: #000;
+    color: #000 !important;
 
 }
 
