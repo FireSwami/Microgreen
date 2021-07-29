@@ -441,7 +441,7 @@ ul.lang-list li a:hover {color: #fdc073;}
 	box-shadow: none;
 }
 
-.cart {
+.buy {
     position: relative;
     left: 30;
     padding: 10px;
@@ -450,7 +450,7 @@ ul.lang-list li a:hover {color: #fdc073;}
 	font-size: 22px;
 }
 
-.cart:hover{
+.buy:hover{
     color: #FFF
 
 }

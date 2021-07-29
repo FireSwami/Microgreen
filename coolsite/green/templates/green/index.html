@@ -14,10 +14,10 @@
 
 				<h2>{{p.title}}</h2>
 	{% autoescape on %}
-	{{p.content|safe|linebreaks|truncatewords:50}}
+	{{p.content|safe|linebreaks|truncatewords:30}}
 	{% endautoescape %}
 			<div class="clear"></div>
-			<button class="cart">Купить</button>
+			<button class="buy">Купить</button>
 			<p class="link-read-post"><a href="{{ p.get_absolute_url }}">Читать еще..</a></p>
 			</li>
 	{% endfor %}
