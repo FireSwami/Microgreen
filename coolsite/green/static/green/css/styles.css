@@ -1,4 +1,3 @@
-
 html, body {
 	font-family: 'Arial';
 	margin: 0;
@@ -6,6 +5,38 @@ html, body {
 	height: 100%;
 	width: 100%;
 	color: #444;
+}
+
+.update input[type=number]{ 
+width: 50;
+}
+
+.update {
+	margin-top: 1em;
+}
+		
+
+.cart-table {
+font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+text-align: left;
+border-collapse: separate;
+border-spacing: 5px;
+background: #61e880;
+color: #656665;
+border: 16px solid #ECE9E0;
+border-radius: 30px;
+}
+
+.cart-table th {
+font-size: 12px;
+padding: 10px;
+text-align: center;
+}
+
+.cart-table td {
+background: linear-gradient(to bottom, black, 10%, cyan);
+padding: 10px;
+text-align: center;
 }
 
 a {
@@ -78,7 +109,9 @@ ul.list-articles li {
 }
 .table-page tr {height: 100%;}
 
-.clear {clear: both;}
+.clear {
+    clear: both;
+   }
 
 .header {
 	background: #3F4137;
@@ -90,8 +123,6 @@ ul.list-articles li {
 	width: 70px;
 	height: 60px;
 }
-
-
 
 ul.mainmenu {
 	list-style: none;
@@ -441,23 +472,98 @@ ul.lang-list li a:hover {color: #fdc073;}
 	box-shadow: none;
 }
 
-.buy {
+.buy{
     position: relative;
-    left: 30;
+    left: 25;
+	top: -2;
     padding: 10px;
 	background-color: #36b552;
-	border-radius: 50%;
+	border-radius: 30%;
 	font-size: 22px;
+	box-shadow:0 0 15px 4px rgba(2, 241, 102, 0.301);
+	
 }
 
 .buy:hover{
-    color: #FFF
+    color: #FFF;
+}
 
+
+.buynumber input[type=number]{ 
+	box-sizing:border-box;
+	width: 50;
+	height: 50;
+	font-size: 35px;
+	border-radius: 40%;
+	box-shadow:0 0 15px 4px rgba(2, 241, 102, 0.301);
+	float: left;
+	
+}
+
+
+.checkout{
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  width: 320;
+  float: left;
+  margin: 12;
+}
+.checkout:hover{
+    background-color: #3e8e41
+}
+.checkout:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.checkout2{
+	padding: 10px 15px;
+	font-size: 18px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+	background-color: #4CAF50;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 0 9px #999;
+	width: 520;
+	float: left;
+	margin: 12;
+  }
+  .checkout2:hover{
+	  background-color: #3e8e41
+  }
+  .checkout2:active {
+	background-color: #3e8e41;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+  }
+
+.cart_main{
+
+    background: #56de73;
+    display: inline-block;
+    color: #000;
+    text-align: center;
+    border-radius: 50%;
+    padding: 1% 0;
+    width: 50;
+    position: absolute;
+    transform: translateY(-25%);
 }
 
 .cart_main:hover{
-    color: #000 !important;
-
+   filter: brightness(0.9);
 }
 
 /* бургер */
@@ -605,5 +711,8 @@ ul.lang-list li a:hover {color: #fdc073;}
 		margin-left: auto;
 	}
 }
+
+
+
 
 

@@ -33,26 +33,35 @@ class AddPostForm(forms.ModelForm):
 
 # создание формы. наследуем от стандартной, расширяем МЕТА
 class RegisterUserForm(UserCreationForm):
-    username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'form-input'}))
+    username = forms.IntegerField(label='Телефон', widget=forms.TextInput(attrs={'class': 'form-input'}))
+    first_name = forms.CharField(label='Имя', widget=forms.TextInput(attrs={'class': 'form-input'}))
+    last_name = forms.CharField(label='Фамилия', widget=forms.TextInput(attrs={'class': 'form-input'}))
     email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'class': 'form-input'}))
     password1 = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
     password2 = forms.CharField(label='Повтор пароля', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
 
     class Meta:
-        model = User  # стандартная модель ЮЗЕР, работает с теблицей AUTH_USER в БД
-        fields = ('username', 'email', 'password1', 'password2')
+        model = User  # стандартная модель ЮЗЕР, работает с таблицей AUTH_USER в БД
+        fields = ('username','first_name', 'last_name', 'email', 'password1', 'password2')
 
 
 class LoginUserForm(AuthenticationForm):
-    username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'form-input'}))
+    username = forms.CharField(label='Телефон', widget=forms.TextInput(attrs={'class': 'form-input'}))
     password = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
+    # username1 = forms.CharField(label='Имя', widget=forms.TextInput(attrs={'class': 'form-input'}))
+
+    class Meta:
+        model = User
+        fields = ('username1', 'username','password')
 
 
 class ContactForm(forms.Form):  # наследуется от общего класса форм
 
     # далее 4 поля: имя, почта, полее ввода, капча
-    name = forms.CharField(label='Имя', max_length=255)
+    #name = forms.CharField(label='Имя', max_length=255)
+    subject = forms.CharField(label='Имя', max_length=255, widget=forms.TextInput(attrs={'class': 'form-control'}))
     email = forms.EmailField(label='Email')
     mobile = forms.IntegerField(widget=forms.TextInput, label='Телефон')
+    #content = forms.CharField(label='Напишите нам', widget=forms.Textarea(attrs={'cols': 60, 'rows': 10}))
     content = forms.CharField(label='Напишите нам', widget=forms.Textarea(attrs={'cols': 60, 'rows': 10}))
-    captcha = CaptchaField(label='Введите текст с картинки')
+    #captcha = CaptchaField(label='Введите текст с картинки',)

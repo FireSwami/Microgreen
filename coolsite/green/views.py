@@ -6,10 +6,12 @@ from django.core.paginator import Paginator
 from django.http import HttpResponseNotFound
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+from django.views import View
 from django.views.generic import ListView, DetailView, CreateView, FormView
 
 from .forms import *
 from .utils import *
+from cart.forms import CartAddProductForm
 
 
 class GreenHome(DataMixin, ListView):
@@ -22,10 +24,14 @@ class GreenHome(DataMixin, ListView):
     # но колеция носит имя posts, для обработки в шаблоне. т.е. либо
     # там изменить название, либо  указать context_object_name
 
-    def get_context_data(self, *, object_list=None, **kwargs):  # функция для контекста
+    def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)  # берем существующий контекст
         c_def = self.get_user_context(title="Микрозелень")  # берем из миксина - Главная страница
-        return dict(list(context.items()) + list(c_def.items()))  # объеденяем супер и миксин
+        return {
+            **context,
+            **c_def,
+            "buy_form": CartAddProductForm(),
+        }  # объеденяем супер и миксин
 
     def get_queryset(self):  # функция возвращает только "для публикации"
         return Green.objects.filter(is_published=True).select_related('cat')
@@ -33,7 +39,7 @@ class GreenHome(DataMixin, ListView):
 
 # select_related('cat') служит для одновременной загрузки и категорий
 # потому как CAT являетя foreign key - внешним ключом в моделях,
-# т.е. связывает первичную модель вимен с вторичной моделью категория
+# т.е. связывает первичную модель грин с вторичной моделью категория
 # =============== таким образом получаем ЖАДНЫЙ запрос, что позволит для категорий
 #  не запрашивать снова и снова категорию.
 
@@ -48,6 +54,8 @@ def about(request):
 
     return render(request, 'green/about.html', {'page_obj': page_obj, 'menu': menu, 'title': 'Содержание:'})
 
+def thanks(request):
+    return render(request, 'green/thanks.html')
 
 def page_not_found(request, exception):
     return HttpResponseNotFound('<h1>Страница отсутствует!</h1>')
@@ -84,21 +92,17 @@ class ContactFormView(DataMixin, FormView):  # форм вью - базовый 
 
     def form_valid(self, form):
         print(form.cleaned_data)
-        name = form.cleaned_data['name']
+        subject = form.cleaned_data['subject']
         email = form.cleaned_data['email']
         mobile = form.cleaned_data['mobile']
         content = form.cleaned_data['content']
-        send_mail(name,
+        send_mail(subject,
                   f' Мой телефон {mobile} и почта {email}. Хочу обратиться с вопросом:\n {content}',
                   'supermicrogreen@ukr.net',
                   ['jobforsoul@gmail.com'],
                   fail_silently=False)
 
         return redirect('thanks')
-
-
-def thanks(request):
-    return render(request, 'green/thanks.html')
 
 
 class ShowPost(DataMixin, DetailView):
@@ -170,3 +174,5 @@ class LoginUser(DataMixin, LoginView):
 def logout_user(request):  # функция для выхода
     logout(request)
     return redirect('login')
+
+

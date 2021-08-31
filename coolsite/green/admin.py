@@ -1,13 +1,9 @@
-from django import forms
 from django.contrib import admin
+from django import forms
 from django.forms import Textarea
 from django.utils.safestring import mark_safe
-
 from .models import *
-
-
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
-
 
 
 class GreenAdminForm(forms.ModelForm):
@@ -17,19 +13,17 @@ class GreenAdminForm(forms.ModelForm):
         fields = '__all__'
 
 
-
-
 class CreenAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'time_create', 'get_html_photo', 'is_published', 'cat_id')
+    list_display = ('title', 'cat', 'price', 'available', 'time_create', 'get_html_photo', 'is_published')
     # перечень строк для админ панели
-    list_display_links = ('id', 'title')
+    list_display_links = ('title',)
     # кликабельные поля
-    search_fields = ('title', 'content')
+    search_fields = ('title', 'content', 'price')
     # по каким полям можно искать
-    list_editable = ('is_published',)
+    list_editable = ('is_published', 'available',)
     # указываем строку, которую можно редактировать
     form = GreenAdminForm
-    list_filter = ('is_published', 'time_create')
+    list_filter = ('available', 'is_published', 'time_create')
     # поля для фильтрации - сортировки
     prepopulated_fields = {"slug": ("title",)}
     # поле слаг прописывается автоматически
@@ -37,7 +31,7 @@ class CreenAdmin(admin.ModelAdmin):
     # миниатюра при редактировании поста
     # 1) поле филдс отобразит порядок и список редактируемых полей
     fields = (
-        'title', 'slug', 'cat', 'content', 'photo', 'get_html_photo', 'is_published', 'time_create', 'time_update')
+        'title', 'price', 'slug', 'cat', 'content', 'photo', 'get_html_photo', 'is_published', 'time_create', 'time_update')
 
     # 2) отобразим не редактируемые поля, только после этого можно добавить их в ФИЛДС
     readonly_fields = ('time_create', 'time_update', 'get_html_photo')
@@ -61,13 +55,24 @@ class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
 
 
+
 admin.site.register(Green, CreenAdmin)  # регистрируем модель
 admin.site.register(Category, CategoryAdmin)
+
+
+
+
+
+
 
 # редактируем надписи в админ-панеле
 admin.site.site_title = 'Админ-панель сайта микрозелень'
 admin.site.site_header = 'Админ-панель сайта микрозелень'
 
 
-
-
+#Добавил ckeditor
+class ProjectUpdateAdmin(admin.ModelAdmin):
+    formfield_overrides = {
+        models.TextField: {'widget': Textarea(
+            attrs={'id': 'project_update_textarea'})}
+    }

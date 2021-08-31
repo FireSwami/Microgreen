@@ -1,0 +1,97 @@
+{% extends 'green/base.html' %}
+{% load static %}
+
+{% block title %}
+Корзина покупок
+{% endblock %}
+
+{% block content %}
+<h1>Корзина покупок:</h1>
+
+<table class="cart-table">
+    <thead>
+    <tr>
+        <th></th>
+        <th>Товар</th>
+        <th>Изменить</th>
+        <th>Удалить</th>
+        <th>Кол-во</th>
+        <th>Цена</th>
+        <th>Стоимость</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in cart %}
+    {% with product=item.product %}
+    <tr>
+        <td>
+            <a href="{{ product.get_absolute_url }}">
+                <img width="60 em" src="{% if product.photo %}
+                {{ product.photo.url }}
+            {% else %}
+                {% static 'noimg.png' %} width="32
+            {% endif %}">
+            </a>
+        </td>
+        <td>{{ product.title }}</td>
+        <td>
+            <form class="update" action="{% url 'cart:cart_add' product.id %}" method="post">
+                {{ item.update_quantity_form.quantity }}
+                {{ item.update_quantity_form.update }}
+                 <input type="submit" value="Обновить">
+                {% csrf_token %}
+            </form>
+        </td>
+        <td>
+    <form class="update" action="{% url 'cart:cart_remove' product.id %}" method="post">
+        {% csrf_token %}
+
+    <button type="submit" 
+       style="color: black; text-decoration: none; margin-top: 1;">Удалить
+    </button>
+    </form>
+
+        </td>
+        <td>
+            {{ item.quantity }}
+        </td>
+        <td class="num">${{ item.price }}</td>
+        <td class="num">${{ item.total_price }}</td>
+    </tr>
+    {% endwith %}
+    {% endfor %}
+    <tr class="total">
+        <td>Всего</td>
+        <td colspan="5">
+
+
+        </td>
+        <td class="num">${{ cart.get_total_price }}</td>
+    </tr>
+    </tbody>
+</table>
+
+                            {% with total_items=cart|length %}
+                            {% if cart|length > 0 %}
+                           
+<form action="{% url 'cart:cart_detail' %}" method="post">
+<p class="text-right">
+    {% csrf_token %}
+
+    <button type="submit" class="checkout">Оформить заказ</button>
+</p>
+</form>
+                              
+
+<a  href= "../">   
+        <button type="submit" class="checkout">Продолжить покупки</button>
+</a>
+                              
+
+                              {% endif %}
+                              {% endwith %}
+
+                                                         
+{% endblock %}
+
+

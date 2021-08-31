@@ -1,6 +1,10 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth import get_user_model
+from django.utils import timezone
 
+User = get_user_model()
+# используем юзера из settings.AUTH_USER_MODEL (скрытые настройки)
 
 class Green(models.Model):
     title = models.CharField(max_length=255, verbose_name="Заголовок")
@@ -11,6 +15,8 @@ class Green(models.Model):
     time_update = models.DateTimeField(auto_now=True, verbose_name="Время изменения")
     is_published = models.BooleanField(default=True, verbose_name="Публикация")
     cat = models.ForeignKey('Category', on_delete=models.PROTECT, verbose_name="Категории")
+    price = models.DecimalField(default=1, max_digits=9, decimal_places=2, verbose_name='Цена')
+    available = models.BooleanField(default=True, verbose_name="Наличие")
 
     def __str__(self):
         return self.title
@@ -39,3 +45,5 @@ class Category(models.Model):
         verbose_name = 'Категории'  # для изменения имени модели
         verbose_name_plural = 'Категория'  # задаем множественное число модели
         ordering = ['id']
+
+

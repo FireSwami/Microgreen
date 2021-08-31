@@ -3,7 +3,7 @@ from green.models import *
 
 register = template.Library()  # переменная регистр - ссылка на библиотеку
 
-@register.simple_tag(name='getcats')  # превращает фуекцию в простой тэг
+@register.simple_tag(name='getcats')  # превращает функцию в простой тэг
 # задаем имя getcats, как синоним для функции
 def get_categories(filter=None):
     if not filter:

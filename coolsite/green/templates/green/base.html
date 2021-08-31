@@ -29,18 +29,30 @@
                     {% endfor %}
 
                     {% if request.user.is_authenticated %}
-                    <li class="last"> Авторизирован как {{user.username}} | <a href="{% url 'logout' %}">Выйти</a></li>
+                    <li class="last"> {{user.first_name}} | <a href="{% url 'logout' %}">Выйти</a></li>
                     {%else%}
                     <li class="last"><a href="{% url 'register' %}">Регистрация</a> | <a
                             href="{% url 'login' %}">Войти</a>
                         {%endif%}
 
                     </li>
-<li>
-    <a class="cart" href="#">Корзина
-        <span class="cart_main" style="border-radius:70%; padding: 5; background-color: #56de73;">10</span>
-    </a>
-</li>
+                    <li>
+                        <a class='cart' href="{% url 'cart:cart_detail' %}"> Корзина &#160;</a>
+                            <span class="cart_main">
+
+                            {% with total_items=cart|length %}
+                            {% if cart|length > 0 %}
+                            {{ total_items }}
+                            {% else %}
+                            0
+                            {% endif %}
+                            {% endwith %}
+
+
+
+                            </span>
+                    </li>
+
                     <li>
 
                         <div class="burger-menu ">
