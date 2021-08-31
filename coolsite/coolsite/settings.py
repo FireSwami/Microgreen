@@ -13,6 +13,8 @@ import os.path
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
@@ -40,8 +42,10 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'captcha',
     'green.apps.GreenConfig',
+    'cart.apps.CartConfig',
     'ckeditor',
     'ckeditor_uploader',
+
 ]
 
 MIDDLEWARE = [
@@ -68,6 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'cart.context_processors.cart',
             ],
         },
     },
@@ -116,22 +121,23 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR.parent / "volatile" / "static"
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # путь к общей папке статик
+# STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = []  # список нестандартных путей
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 # все медиа собрано в каталог media
 MEDIA_ROOT = BASE_DIR.parent / "persistent" / "media"
 MEDIA_URL = "/media/"
 
 # путь, для тулбара
 INTERNAL_IPS = [
-    '127.0.0.1',
+    '*',
 ]
-#Почтовый сервер
+
+# добавляю настройки для smtp сервера
 
 EMAIL_HOST = 'smtp.ukr.net'
-EMAIL_PORT = 2525  #465  #2525
+EMAIL_PORT = 2525  #465 #2525
 EMAIL_HOST_USER = 'supermicrogreen@ukr.net' # логин почты
 EMAIL_HOST_PASSWORD = 'cDblNgVhIWvOPOUU' # пасс от почты
 EMAIL_USE_TLS = False
@@ -145,9 +151,8 @@ CACHES = {
     }
 }
 
-
-
 CKEDITOR_UPLOAD_PATH = "uploads/"
+
 
 
 CKEDITOR_CONFIGS = {
@@ -186,6 +191,7 @@ CKEDITOR_CONFIGS = {
                 'Maximize',
                 'Youtube',
 
+
             ]},
         ],
         'toolbar': 'YourCustomToolbarConfig',  # put selected toolbar config here
@@ -212,7 +218,13 @@ CKEDITOR_CONFIGS = {
             'dialog',
             'dialogui',
             'elementspath',
-            #'Youtube'               # c добавлением  экстраплагина ютуб - пропадает вся форма редактирования
+            #'Youtube'             # Почему не работает?
+
         ]),
     }
 }
+
+CART_SESSION_ID = 'cart'
+# привязка корзины к сессии, которая привязана к пользователю по умолчанию..
+
+
