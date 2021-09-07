@@ -68,7 +68,7 @@
                             <nav class="burger-menu__nav">
 
                                 {% if request.user.is_authenticated %}
-                                <a class="burger-menu__link">Привет, {{user.username}} </a>
+                                <a class="burger-menu__link">Привет, {{user.first_name}} </a>
 
                                 {% for m in menu %}
                                 <a href="{% url m.url_name %}" class="burger-menu__link">{{m.title}}</a>
