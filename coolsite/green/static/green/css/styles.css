@@ -781,6 +781,10 @@ ul.lang-list li a:hover {color: #fdc073;}
 
 
 @media screen and (max-width: 500px) {
+	.container {
+		width: 200%;
+		padding: 0 15px;
+	}
 	.cartcontainer .cart-table thead {
 		display: none;
    }
