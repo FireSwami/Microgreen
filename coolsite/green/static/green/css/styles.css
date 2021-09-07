@@ -14,9 +14,37 @@ width: 50;
 .update {
 	margin-top: 1em;
 }
-		
+
+
+.cartcontainer {
+	min-width: 320px;
+	max-width: 100%;
+	padding: 0 15px;
+	box-sizing: border-box;
+}
 
 .cart-table {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	border-collapse: collapse;
+   width: 100%;
+   margin: 20px 0;
+}
+
+.cart-table td, .cart-table th {
+	font-size: 20px;
+	padding: 10px;
+   border: 1px solid #cbbdbd;
+}
+
+
+tr:nth-child(even){
+   background-color: #f0f4c3
+}
+
+
+
+
+/* .cart-table {
 font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 text-align: left;
 border-collapse: separate;
@@ -37,7 +65,7 @@ text-align: center;
 background: linear-gradient(to bottom, black, 10%, cyan);
 padding: 10px;
 text-align: center;
-}
+} */
 
 a {
 	color: #0059b2;
@@ -707,6 +735,7 @@ ul.lang-list li a:hover {color: #fdc073;}
 	/* } */
 }
 
+
 @media screen and (max-width: 991px) {
 	.container {
 		width: 720px;
@@ -748,6 +777,31 @@ ul.lang-list li a:hover {color: #fdc073;}
 	.cart_main{
 		padding: 2% 0;
 	}
+}
+
+
+@media screen and (max-width: 500px) {
+	.cartcontainer .cart-table thead {
+		display: none;
+   }
+
+   .cartcontainer .cart-table tr {
+
+	display: block;
+
+}
+
+.cartcontainer .cart-table td {
+	display: flex;
+	justify-content: space-between;
+	font-size: 14px;
+}
+.cartcontainer .cart-table td::before {
+	content: attr(data-label);
+	font-weight: bold;
+	margin-right: 20px;
+}
+
 }
 
 @media screen and (max-width: 319px) {
