@@ -25,7 +25,7 @@
 
 
                     {% for m in menu %}
-                    <li><a href="{% url m.url_name %}">{{m.title}}</a></li>
+                    <li class="mainmenu_mobile"><a href="{% url m.url_name %}">{{m.title}}</a></li>
                     {% endfor %}
 
                     {% if request.user.is_authenticated %}
