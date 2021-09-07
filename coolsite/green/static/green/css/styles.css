@@ -731,23 +731,40 @@ ul.lang-list li a:hover {color: #fdc073;}
 	/* } */
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 550px) {
 	.container {
 		width: 200%;
 		padding: 0 15px;
 	}
-
-
 	.left-chapters ul {
 		display: none;
 	}
 	.mainmenu_mobile {
 		display: none;
 	}
-
+	.last {
+		display: none;
+	}
 	.cart_main{
 		padding: 2% 0;
 	}
-
 }
 
+@media screen and (max-width: 319px) {
+	.container {
+		width: 200%;
+		padding: 0 15px;
+	}
+	.left-chapters ul {
+		display: none;
+	}
+	.mainmenu_mobile {
+		display: none;
+	}
+	.last {
+		display: none;
+	}
+	.cart_main{
+		padding: 2% 0;
+	}
+}
