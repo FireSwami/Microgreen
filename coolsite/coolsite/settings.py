@@ -25,7 +25,6 @@ SECRET_KEY = 'django-insecure-u4l2jwmw*a^@!17onw^4cdq25__73(-ita9@#sym$u^_w=n%g9
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-# включен режим отладки!
 
 
 ALLOWED_HOSTS = ['*']
@@ -64,7 +63,8 @@ ROOT_URLCONF = 'coolsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # путь к альтернативной админ-страничке-шаблону
+        # путь к альтернативной админ-страничке-шаблону
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,25 +121,21 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR.parent / "volatile" / "static"
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # путь к общей папке статик
-# STATIC_DIR = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = []  # список нестандартных путей
+STATICFILES_DIRS = []
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# все медиа собрано в каталог media
 MEDIA_ROOT = BASE_DIR.parent / "persistent" / "media"
 MEDIA_URL = "/media/"
 
-# путь, для тулбара
+# Тулбар
 INTERNAL_IPS = [
     '*',
 ]
 
-# добавляю настройки для smtp сервера
-
+# smtp сервер
 EMAIL_HOST = 'smtp.ukr.net'
-EMAIL_PORT = 2525  #465 #2525
-EMAIL_HOST_USER = 'supermicrogreen@ukr.net' # логин почты
-EMAIL_HOST_PASSWORD = 'cDblNgVhIWvOPOUU' # пасс от почты
+EMAIL_PORT = 2525  # 465 либо #2525
+EMAIL_HOST_USER = 'supermicrogreen@ukr.net'  # логин почты
+EMAIL_HOST_PASSWORD = 'cDblNgVhIWvOPOUU'  # пасс от почты
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 
@@ -147,12 +143,12 @@ EMAIL_USE_SSL = True
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-        'LOCATION': os.path.join(BASE_DIR, 'coolsite_cache'),  # указать путь к папке кэша
+
+        'LOCATION': os.path.join(BASE_DIR, 'coolsite_cache'),
     }
 }
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
-
 
 
 CKEDITOR_CONFIGS = {
@@ -163,9 +159,12 @@ CKEDITOR_CONFIGS = {
             ['Source', '-', 'Bold', 'Italic']
         ],
         'toolbar_YourCustomToolbarConfig': [
-            {'name': 'document', 'items': ['Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates']},
-            {'name': 'clipboard', 'items': ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']},
-            {'name': 'editing', 'items': ['Find', 'Replace', '-', 'SelectAll']},
+            {'name': 'document', 'items': [
+                'Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates']},
+            {'name': 'clipboard', 'items': [
+                'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']},
+            {'name': 'editing', 'items': [
+                'Find', 'Replace', '-', 'SelectAll']},
             {'name': 'forms',
              'items': ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton',
                        'HiddenField']},
@@ -180,7 +179,8 @@ CKEDITOR_CONFIGS = {
             {'name': 'insert',
              'items': ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe']},
             '/',
-            {'name': 'styles', 'items': ['Styles', 'Format', 'Font', 'FontSize']},
+            {'name': 'styles', 'items': [
+                'Styles', 'Format', 'Font', 'FontSize']},
             {'name': 'colors', 'items': ['TextColor', 'BGColor']},
             {'name': 'tools', 'items': ['Maximize', 'ShowBlocks']},
             {'name': 'about', 'items': ['About']},
@@ -204,7 +204,7 @@ CKEDITOR_CONFIGS = {
         # 'mathJaxLib': '//cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML',
         'tabSpaces': 4,
         'extraPlugins': ','.join([
-            'uploadimage', # the upload image feature
+            'uploadimage',  # the upload image feature
             # your extra plugins here
             'div',
             'autolink',
@@ -218,13 +218,10 @@ CKEDITOR_CONFIGS = {
             'dialog',
             'dialogui',
             'elementspath',
-            #'Youtube'             # Почему не работает?
+            # 'Youtube'             # Почему не работает?
 
         ]),
     }
 }
 
 CART_SESSION_ID = 'cart'
-# привязка корзины к сессии, которая привязана к пользователю по умолчанию..
-
-

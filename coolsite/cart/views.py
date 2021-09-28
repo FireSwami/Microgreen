@@ -16,7 +16,7 @@ from django.shortcuts import redirect
 def cart_add(request, product_id):
     cart = Cart(request)
     product = get_object_or_404(Green, id=product_id)
-    # raise Exception(request.POST["count"])
+
     form = CartAddProductForm(request.POST)
     if form.is_valid():
         cd = form.cleaned_data
@@ -41,8 +41,8 @@ def cart_detail(request):
         order.save()
         for row in cart:
             line_item = OrderLineItem(
-                order=order, 
-                product=row["product"], 
+                order=order,
+                product=row["product"],
                 quantity=row["quantity"],
                 price=row["price"],
             )
@@ -53,12 +53,9 @@ def cart_detail(request):
     else:
         for item in cart:
             item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'],
-                                                                   'update': True})
+                                                                       'update': True})
         return render(request, 'cart/detail.html', {'cart': cart})
-        
 
 
 def buythanks(request):
     return render(request, 'cart/buythanks.html')
-
-

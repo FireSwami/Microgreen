@@ -1,7 +1,6 @@
 from django.urls import path
 
-from .views import *
-
+from .views import GreenHome, about, AddPage, ContactFormView, thanks, LoginUser, logout_user, RegisterUser, ShowPost, GreenCategory
 
 
 urlpatterns = [
@@ -15,6 +14,4 @@ urlpatterns = [
     path('register/', RegisterUser.as_view(), name='register'),
     path('post/<slug:post_slug>/', ShowPost.as_view(), name='post'),
     path('category/<slug:cat_slug>/', GreenCategory.as_view(), name='category'),
-     
-   
 ]

@@ -4,109 +4,111 @@
 
 
 <html>
+
 <head>
     <title>{{title}}</title>
-    <link type="text/css" href="{% static 'green/css/styles.css' %}" rel="stylesheet"/>
+    <link type="text/css" href="{% static 'green/css/styles.css' %}" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="shortcut icon" href="{% static 'green/images/main.ico' %}" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{% static 'green/images/main.ico' %}" type="image/x-icon" />
     <!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
+
 <body>
-<table class="table-page" border=0 cellpadding="0" cellspacing="0">
-    <tr>
-        <td valign=top>
-            {% block mainmenu %}
-            <div class="header">
-                <ul id="mainmenu" class="mainmenu">
-                    <li class="logo"><a href="{% url 'home' %}">
-                        <div class="logo"></div>
-                    </a></li>
+    <table class="table-page" border=0 cellpadding="0" cellspacing="0">
+        <tr>
+            <td valign=top>
+                {% block mainmenu %}
+                <div class="header">
+                    <ul id="mainmenu" class="mainmenu">
+                        <li class="logo"><a href="{% url 'home' %}">
+                                <div class="logo"></div>
+                            </a></li>
 
 
-                    {% for m in menu %}
-                    <li class="mainmenu_mobile"><a href="{% url m.url_name %}">{{m.title}}</a></li>
-                    {% endfor %}
+                        {% for m in menu %}
+                        <li class="mainmenu_mobile"><a href="{% url m.url_name %}">{{m.title}}</a></li>
+                        {% endfor %}
 
-                    {% if request.user.is_authenticated %}
-                    <li class="last"> {{user.first_name}} | <a href="{% url 'logout' %}">Выйти</a></li>
-                    {%else%}
-                    <li class="last"><a href="{% url 'register' %}">Регистрация</a> | <a
-                            href="{% url 'login' %}">Войти</a>
-                        {%endif%}
+                        {% if request.user.is_authenticated %}
+                        <li class="last"> {{user.first_name}} | <a href="{% url 'logout' %}">Выйти</a></li>
+                        {%else%}
+                        <li class="last"><a href="{% url 'register' %}">Регистрация</a> | <a
+                                href="{% url 'login' %}">Войти</a>
+                            {%endif%}
 
-                    </li>
-                    
-                    <li style="
+                        </li>
+
+                        <li style="
                                 display: flex;
                                 
                                 
                         ">
 
-                        <a class='cart' href="{% url 'cart:cart_detail' %}"> Корзина &#160;</a>
+                            <a class='cart' href="{% url 'cart:cart_detail' %}"> Корзина &#160;</a>
                             <span class="cart_main">
 
-                            {% with total_items=cart|length %}
-                            {% if cart|length > 0 %}
-                            {{ total_items }}
-                            {% else %}
-                            0
-                            {% endif %}
-                            {% endwith %}
+                                {% with total_items=cart|length %}
+                                {% if cart|length > 0 %}
+                                {{ total_items }}
+                                {% else %}
+                                0
+                                {% endif %}
+                                {% endwith %}
 
 
 
                             </span>
-                    </li>
+                        </li>
 
-                    <li>
+                        <li>
 
-                        <div class="burger-menu ">
-                            <a href="#" class="burger-menu__button">
-                                <span class="burger-menu__lines"></span>
-                            </a>
-                            <nav class="burger-menu__nav">
+                            <div class="burger-menu ">
+                                <a href="#" class="burger-menu__button">
+                                    <span class="burger-menu__lines"></span>
+                                </a>
+                                <nav class="burger-menu__nav">
 
-                                {% if request.user.is_authenticated %}
-                                <a class="burger-menu__link">Привет, {{user.first_name}} </a>
+                                    {% if request.user.is_authenticated %}
+                                    <a class="burger-menu__link">Привет, {{user.first_name}} </a>
 
-                                {% for m in menu %}
-                                <a href="{% url m.url_name %}" class="burger-menu__link">{{m.title}}</a>
-                                {% endfor %}
+                                    {% for m in menu %}
+                                    <a href="{% url m.url_name %}" class="burger-menu__link">{{m.title}}</a>
+                                    {% endfor %}
 
-                                <a href="{% url 'logout' %}" class="burger-menu__link">Выйти</a>
+                                    <a href="{% url 'logout' %}" class="burger-menu__link">Выйти</a>
 
-                                {%else%}
-                                {% for m in menu %}
-                                <a href="{% url m.url_name %}" class="burger-menu__link">{{m.title}}</a>
-                                {% endfor %}
-                                <a href="{% url 'register' %}" class="burger-menu__link">Регистрация</a>
-                                <a href="{% url 'login' %}" class="burger-menu__link">Войти</a>
-                                {%endif%}
+                                    {%else%}
+                                    {% for m in menu %}
+                                    <a href="{% url m.url_name %}" class="burger-menu__link">{{m.title}}</a>
+                                    {% endfor %}
+                                    <a href="{% url 'register' %}" class="burger-menu__link">Регистрация</a>
+                                    <a href="{% url 'login' %}" class="burger-menu__link">Войти</a>
+                                    {%endif%}
 
-                            </nav>
-                        </div>
-
-
-                    </li>
+                                </nav>
+                            </div>
 
 
-                </ul>
+                        </li>
 
 
-                <div class="clear"></div>
-            </div>
-            {% endblock mainmenu %}
+                    </ul>
 
 
-            <table class="table-content" border=0 cellpadding="0" cellspacing="0">
-                <tr>
-                    <!-- Sidebar слева -->
+                    <div class="clear"></div>
+                </div>
+                {% endblock mainmenu %}
 
-                    <td valign="top" class="left-chapters">
-                        <ul id="leftchapters">
 
-                            <!--  скрыл отображение всего списка, т.к. нажатие на логотип - дает тот же результат
+                <table class="table-content" border=0 cellpadding="0" cellspacing="0">
+                    <tr>
+                        <!-- Sidebar слева -->
+
+                        <td valign="top" class="left-chapters">
+                            <ul id="leftchapters">
+
+                                <!--  скрыл отображение всего списка, т.к. нажатие на логотип - дает тот же результат
                             {% if cat_selected == 0 %}
                                     <li class="selected">Содержание</li>
                             {% else %}
@@ -114,81 +116,82 @@
                             {% endif %}
                             -->
 
-                            {% for c in cats %}
-                            {% if c.green__count > 0 %}
-                            {% if c.pk == cat_selected %}
-                            <li class="selected">{{c.name}}</li>
-                            {% else %}
-                            <li><a href="{{ c.get_absolute_url }}">{{c.name}}</a></li>
-                            {% endif %}
-                            {% endif %}
-                            {% endfor %}
+                                {% for c in cats %}
+                                {% if c.green__count > 0 %}
+                                {% if c.pk == cat_selected %}
+                                <li class="selected">{{c.name}}</li>
+                                {% else %}
+                                <li><a href="{{ c.get_absolute_url }}">{{c.name}}</a></li>
+                                {% endif %}
+                                {% endif %}
+                                {% endfor %}
 
-                            <!--Модуль вывода кнопки ютуба, когда потребуется-->
-                            <!--                            <li class="share">-->
-                            <!--                                <p>Наш канал</p>-->
-                            <!--                                <a class="share-yt" href="https://www.youtube.com" target="_blank" rel="nofollow"></a>-->
-                            <!--                            </li>-->
-                        </ul>
-                    </td>
-                    <!-- Конец Sidebar'а -->
-                    <td valign="top" class="content">
-                        <!-- Хлебные крошки -->
-                        {% block breadcrumbs %}
-                        {% endblock %}
-
-                        <!-- Блок контента -->
-                        <div class="content-text">
-                            {% block content %}
+                                <!--Модуль вывода кнопки ютуба, когда потребуется-->
+                                <!--                            <li class="share">-->
+                                <!--                                <p>Наш канал</p>-->
+                                <!--                                <a class="share-yt" href="https://www.youtube.com" target="_blank" rel="nofollow"></a>-->
+                                <!--                            </li>-->
+                            </ul>
+                        </td>
+                        <!-- Конец Sidebar'а -->
+                        <td valign="top" class="content">
+                            <!-- Хлебные крошки -->
+                            {% block breadcrumbs %}
                             {% endblock %}
-                            {% if page_obj.has_other_pages %}
-                            <nav class="list-pages">
-                                <ul>
-                                    {% if page_obj.has_previous %}
-                                    <li class="page-num">
-                                        <a href="?page={{ page_obj.previous_page_number }}">&lt;</a>
-                                    </li>
-                                    {% endif %}
 
-                                    {% for p in paginator.page_range %}
-                                    {% if page_obj.number == p %}
-                                    <li class="page-num page-num-selected">{{ p }}</li>
-                                    {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
-                                    <li class="page-num">
-                                        <a href="?page={{ p }}">{{ p }}</a>
-                                    </li>
-                                    {% endif %}
-                                    {% endfor %}
+                            <!-- Блок контента -->
+                            <div class="content-text">
+                                {% block content %}
+                                {% endblock %}
+                                {% if page_obj.has_other_pages %}
+                                <nav class="list-pages">
+                                    <ul>
+                                        {% if page_obj.has_previous %}
+                                        <li class="page-num">
+                                            <a href="?page={{ page_obj.previous_page_number }}">&lt;</a>
+                                        </li>
+                                        {% endif %}
 
-                                    {% if page_obj.has_next %}
-                                    <li class="page-num">
-                                        <a href="?page={{ page_obj.next_page_number }}">&gt;</a>
-                                    </li>
-                                    {% endif %}
+                                        {% for p in paginator.page_range %}
+                                        {% if page_obj.number == p %}
+                                        <li class="page-num page-num-selected">{{ p }}</li>
+                                        {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %} <li
+                                            class="page-num">
+                                            <a href="?page={{ p }}">{{ p }}</a>
+                                            </li>
+                                            {% endif %}
+                                            {% endfor %}
 
-                                </ul>
-                            </nav>
-                            {% endif %}
-                        </div>
-                        <!-- Конец блока контента -->
+                                            {% if page_obj.has_next %}
+                                            <li class="page-num">
+                                                <a href="?page={{ page_obj.next_page_number }}">&gt;</a>
+                                            </li>
+                                            {% endif %}
 
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-    <!-- Footer -->
-    <tr>
-        <td valign=top>
-            <div id="footer">
-                <p>&copy; 2021 Microgreen company</p>
-            </div>
-        </td>
-    </tr>
-</table>
-<!-- Конец footer'а и страницы -->
+                                    </ul>
+                                </nav>
+                                {% endif %}
+                            </div>
+                            <!-- Конец блока контента -->
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="/static/green/js/script.js"></script>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- Footer -->
+        <tr>
+            <td valign=top>
+                <div id="footer">
+                    <p>&copy; 2021 Microgreen company</p>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <!-- Конец footer'а и страницы -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="/static/green/js/script.js"></script>
 </body>
+
 </html>
