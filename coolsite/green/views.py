@@ -6,11 +6,11 @@ from django.core.paginator import Paginator
 from django.http import HttpResponseNotFound
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.views import View
+
 from django.views.generic import ListView, DetailView, CreateView, FormView
 
 from .forms import Green, AddPostForm, ContactForm, RegisterUserForm, LoginUserForm
-from .utils import DataMixin, Category
+from .utils import DataMixin, Category, menu
 from cart.forms import CartAddProductForm
 
 
