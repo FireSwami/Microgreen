@@ -1,9 +1,9 @@
 from selenium import webdriver
 import time
 from selenium.webdriver.common.keys import Keys
-
 import pathlib
 from pathlib import Path
+import pickle
 
 url = 'https://microgreen.ferumflex.com/'
 
@@ -34,7 +34,8 @@ try:
     pass_input.send_keys(Keys.ENTER)
     time.sleep(6)
 
-
+    # #  запись cookies
+    # pickle.dump(driver.get_cookies(), open("cookies", "wb"))
 
 except Exception as ex:
     print(ex)
