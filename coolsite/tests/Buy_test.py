@@ -9,7 +9,7 @@ import random
 url = 'https://microgreen.ferumflex.com/'
 
 dir_path = pathlib.Path.cwd()
-driver = webdriver.Firefox(executable_path=Path(dir_path, 'coolsite', "geckodriver.exe"))
+driver = webdriver.Firefox(executable_path=Path(dir_path, "geckodriver.exe"))
  
 
 try:

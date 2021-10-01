@@ -8,14 +8,17 @@ import pickle
 url = 'https://microgreen.ferumflex.com/'
 
 dir_path = pathlib.Path.cwd()
-driver = webdriver.Firefox(executable_path=Path(dir_path, 'coolsite', "geckodriver.exe"))
- 
+driver = webdriver.Firefox(executable_path=Path(dir_path, "geckodriver"))  # рабочая директория
+# driver = webdriver.Firefox(executable_path=Path(pathlib.Path.home(), "geckodriver.exe"))  # домашняя директория
+
+
 
 try:
     driver.get(url=url)
     # time.sleep(3)
 
-    enter_link = driver.find_element_by_xpath('/html/body/table/tbody/tr[1]/td/div/ul/li[4]/a[2]').click()
+    enter_link = driver.find_element_by_xpath(
+        '/html/body/table/tbody/tr[1]/td/div/ul/li[4]/a[2]').click()
     # time.sleep(3)
 
     login_input = driver.find_element_by_name("username")
@@ -29,7 +32,6 @@ try:
     # time.sleep(3)
 
     # enter_link = driver.find_element_by_xpath('/html/body/table/tbody/tr[1]/td/table/tbody/tr/td[2]/div/form/button').click()
-  
 
     pass_input.send_keys(Keys.ENTER)
     time.sleep(6)
