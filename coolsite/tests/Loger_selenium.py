@@ -7,10 +7,8 @@ import pickle
 
 url = 'https://microgreen.ferumflex.com/'
 
-dir_path = pathlib.Path.cwd()
-driver = webdriver.Firefox(executable_path=Path(dir_path, "geckodriver"))  # рабочая директория
 # driver = webdriver.Firefox(executable_path=Path(pathlib.Path.home(), "geckodriver.exe"))  # домашняя директория
-
+driver = webdriver.Firefox(executable_path=Path(pathlib.Path.cwd(), 'tests', "geckodriver.exe"))  # рабочая директория
 
 
 try:
@@ -36,8 +34,8 @@ try:
     pass_input.send_keys(Keys.ENTER)
     time.sleep(6)
 
-    # #  запись cookies
-    # pickle.dump(driver.get_cookies(), open("cookies", "wb"))
+    #  запись cookies
+    pickle.dump(driver.get_cookies(), open("cookies", "wb"))
 
 except Exception as ex:
     print(ex)
