@@ -25,7 +25,7 @@ RUN pip3.8 install -r /opt/django/requirements.txt
 ARG SECRET_KEY
 ENV SECRET_KEY=$SECRET_KEY
 
-COPY coolsite /opt/django/app
+COPY greensite /opt/django/app
 RUN python3.8 /opt/django/app/manage.py collectstatic --noinput
 
 VOLUME ["/opt/django/persistent/media"]
