@@ -1,0 +1,10 @@
+{% extends 'green/base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+
+{% for name in page_obj %}
+<li><a href="{{ name.get_absolute_url }}"> {{ name }}</a></li>
+{% endfor %}
+
+{% endblock %}
