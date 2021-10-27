@@ -30,9 +30,9 @@ class TestPages(TestCase):
         green = Green(title="tovar", slug="microgreen", cat=category)
         green.save()
 
-    def tearDown(self):
-        client = Client()
-        client = client.logout()
+    # def tearDown(self):
+    #     client = Client()
+    #     client = client.logout()
 
     def test_main(self):
         response = self.client.get("/")

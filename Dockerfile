@@ -30,4 +30,4 @@ RUN python3.8 /opt/django/app/manage.py collectstatic --noinput
 
 VOLUME ["/opt/django/persistent/media"]
 
-CMD service nginx start && python3.8 /opt/django/app/manage.py migrate --noinput && gunicorn -w 2 --bind=unix:/opt/django/app.sock coolsite.wsgi
+CMD service nginx start && python3.8 /opt/django/app/manage.py migrate --noinput && gunicorn -w 2 --bind=unix:/opt/django/app.sock greensite.wsgi
