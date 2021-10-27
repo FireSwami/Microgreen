@@ -19,7 +19,7 @@ RUN rm /etc/nginx/sites-enabled/default \
 
 WORKDIR /opt/django/app/
 
-COPY coolsite/requirements.txt /opt/django/requirements.txt
+COPY greensite/requirements.txt /opt/django/requirements.txt
 RUN pip3.8 install -r /opt/django/requirements.txt
 
 ARG SECRET_KEY
