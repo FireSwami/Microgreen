@@ -14,12 +14,13 @@ from green.models import Category, Green
 
 
 class TestPages(TestCase):
-
-    def setUp(self):
+    @classmethod
+    def setUpTestData(cls):
         USERNAME = 'test'
         PASSWORD = 'Testpassword1'
         User = get_user_model()
-        user = User.objects.create_user(username=USERNAME, password=PASSWORD)
+        cls.user = User.objects.create_user(
+            username=USERNAME, password=PASSWORD)
 
         client = Client()
         client.login(username=USERNAME, password=PASSWORD)
