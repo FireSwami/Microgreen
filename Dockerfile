@@ -19,13 +19,13 @@ RUN rm /etc/nginx/sites-enabled/default \
 
 WORKDIR /opt/django/app/
 
-COPY greensite/requirements.txt /opt/django/requirements.txt
+COPY MGShop/requirements.txt /opt/django/requirements.txt
 RUN pip3.8 install -r /opt/django/requirements.txt
 
 ARG SECRET_KEY
 ENV SECRET_KEY=$SECRET_KEY
 
-COPY greensite /opt/django/app
+COPY MGShop /opt/django/app
 RUN python3.8 /opt/django/app/manage.py collectstatic --noinput
 
 VOLUME ["/opt/django/persistent/media"]
